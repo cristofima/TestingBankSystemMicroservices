@@ -56,10 +56,10 @@ stages:
         projectName: '$(SONAR_PROJECT_NAME)'
         extraProperties: |
           sonar.organization=$(SONAR_ORGANIZATION)
-          sonar.sources=src/services/Security/src,src/services/Account/src,src/services/Movement/src,src/services/Transaction/src
-          sonar.tests=src/services/Security/tests,src/services/Account/tests,src/services/Movement/tests,src/services/Transaction/tests
-          sonar.exclusions=**/bin/**/*,**/obj/**/*,**/Migrations/**/*,**/*.Designer.cs,**/ModelSnapshot.cs,**/Program.cs,**/packages/**/*,**/*.min.js,**/*.min.css
-          sonar.test.inclusions=**/*Test*.cs,**/*Tests.cs
+          sonar.sources=src/
+          sonar.tests=src/
+          sonar.exclusions=**/bin/**/*,**/obj/**/*,**/Migrations/**/*,**/*.Designer.cs,**/ModelSnapshot.cs,**/Program.cs,**/packages/**/*,**/*.min.js,**/*.min.css,**/tests/**/*,**/*Test*.cs,**/*Tests.cs
+          sonar.test.inclusions=**/tests/**/*Test*.cs,**/tests/**/*Tests.cs
           sonar.test.exclusions=**/bin/**/*,**/obj/**/*
           sonar.cs.opencover.reportsPaths=$(Agent.TempDirectory)/**/*.xml,$(resultsDirectory)/**/*.xml
           sonar.cs.vstest.reportsPaths=$(Agent.TempDirectory)/**/*.trx,$(resultsDirectory)/**/*.trx
