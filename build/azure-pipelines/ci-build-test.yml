@@ -56,10 +56,7 @@ stages:
         projectName: '$(SONAR_PROJECT_NAME)'
         extraProperties: |
           sonar.organization=$(SONAR_ORGANIZATION)
-          sonar.sources=src/services/Security/src,src/services/Account/src,src/services/Movement/src,src/services/Transaction/src
-          sonar.tests=src/services/Security/tests,src/services/Account/tests,src/services/Movement/tests,src/services/Transaction/tests
           sonar.exclusions=**/bin/**,**/obj/**
-          sonar.test.inclusions=**/*Test*.cs,**/*Tests.cs
           sonar.test.exclusions=**/bin/**,**/obj/**
           sonar.cs.opencover.reportsPaths=$(Agent.TempDirectory)/**/*.xml
           sonar.cs.vstest.reportsPaths=$(Agent.TempDirectory)/**/*.trx
